@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.4",
     "lib-flexible": "^0.3.2",
+    "px2rem-loader": "^0.1.9",
     "vue": "^2.6.11"
   },
   "devDependencies": {
