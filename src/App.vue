@@ -31,6 +31,7 @@ export default {
   .head-img {
     width: 4.31rem;
     margin: 0 auto;
+    padding-top: .15rem;
     img {
       width: 100%;
     }
