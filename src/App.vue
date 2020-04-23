@@ -1,52 +1,20 @@
 <template>
   <div id="app">
-    <!-- 头部、logo -->
-    <div class="head">
-      <div class="head-img">
-        <img src="./assets/images/logo.jpg" alt="上海伯思立">
-      </div>
-    </div>
-    <div class="bread">
-      <P>科室介绍</P>
-    </div>
-
+    <TopHeader />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-
+import TopHeader from './components/TopHeader/TopHeader'
 export default {
   name: 'App',
   components: {
-
+    TopHeader
   }
 }
 </script>
 
 <style lang="less" rel="stylesheet/less">
-.head {
-  width: 100%;
-  height: 1.08rem;
-  background-color: #FFF;
-  .head-img {
-    width: 4.31rem;
-    margin: 0 auto;
-    padding-top: .15rem;
-    img {
-      width: 100%;
-    }
-  }
-}
-.bread {
-  width: 100%;
-  height: 1.2rem;
-  background: url('./assets/images/bread.jpg') no-repeat;
-  background-size: 100% 100%;
-  p {
-    font-size: .4rem;
-    line-height: 1.2rem;
-    color: #FFF;
-    padding-left: .5rem;
-  }
-}
+
 </style>
