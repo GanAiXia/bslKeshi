@@ -18,12 +18,12 @@
 <style lang="less" scoped>
 .head {
   width: 100%;
-  height: 1.08rem;
+  height: 1.44rem;
   background-color: #FFF;
   .head-img {
-    width: 4.31rem;
+    width: 5.746667rem;
     margin: 0 auto;
-    padding-top: .15rem;
+    padding-top: .2rem;
     img {
       width: 100%;
     }

@@ -10,11 +10,19 @@ export default new VueRouter({
     routes: [
         {
             path: '/',
-            component: Keshi
+            component: Keshi,
+            name: 'index',
+            meta: {
+                title:'上海伯思立-科室介绍'
+            }
         },
         {
             path: '/keshi',
-            component: Keshi
+            component: Keshi,
+            name: 'keshi',
+            meta: {
+                title:'上海伯思立-科室介绍'
+            }            
         }
     ]
 })
