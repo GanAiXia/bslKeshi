@@ -20,18 +20,23 @@
         data() {
           return {
             keshiTotal: [
-              {title: '美容外科', imgUrl: require('./images/waike.png'), toUrl: '/'},
-              {title: '美容皮肤科', imgUrl: require('./images/pifuke.png'), toUrl: '/'},
-              {title: '美容牙科', imgUrl: require('./images/yake.png'), toUrl: '/'},
-              {title: '美容中医科', imgUrl: require('./images/zhongyike.png'), toUrl: '/'},
-              {title: '麻醉科', imgUrl: require('./images/mazuike.png'), toUrl: '/'},
-              {title: '护理', imgUrl: require('./images/huli.png'), toUrl: '/'}
+              {title: '美容外科', imgUrl: require('./images/waike.png')},
+              {title: '美容皮肤科', imgUrl: require('./images/pifuke.png')},
+              {title: '美容牙科', imgUrl: require('./images/yake.png')},
+              {title: '美容中医科', imgUrl: require('./images/zhongyike.png')},
+              {title: '麻醉科', imgUrl: require('./images/mazuike.png')},
+              {title: '护理', imgUrl: require('./images/huli.png')}
             ],
             title: "科室介绍"
           }
         },
         components: {
           Bread
+        },
+        mounted(){
+          let doctorList = require('../../../data/doctorList.json')
+          doctorList = Array.from(doctorList.Data)
+          console.log(doctorList[0].doctors);
         },
         methods: {
           goTo(param){
