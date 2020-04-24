@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Keshi from '../pages/Keshi/Keshi.vue'
+import KeshiList from '../pages/KeshiList/KeshiList.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +24,14 @@ export default new VueRouter({
             meta: {
                 title:'上海伯思立-科室介绍'
             }            
-        }
+        },
+        {
+            path: '/keshilist',
+            component: KeshiList,
+            name: 'keshiList',
+            meta: {
+                title:'上海伯思立-科室介绍'
+            }            
+        }        
     ]
 })

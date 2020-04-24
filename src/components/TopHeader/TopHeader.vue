@@ -5,7 +5,7 @@
             <div class="head-img">
                 <img src="../../assets/images/logo.jpg" alt="上海伯思立">
             </div>
-        </div>        
+        </div>               
     </div>
 </template>
 

@@ -1,11 +1,9 @@
 <template>
     <div>
-        <div class="bread">
-            <P>科室介绍</P>
-        </div>
+        <Bread :title = "title" />
         <div class="content">
           <ul>
-            <li class="item" v-for="(item, index) in keshiTotal" :key="index">
+            <li class="item" v-for="(item, index) in keshiTotal" :key="index" @click="goTo(item.title)">
               <div class="img">
                 <img :src="item.imgUrl" :alt="item.title">
               </div>
@@ -17,6 +15,7 @@
 </template>
 
 <script>
+    import Bread from '../../components/Bread/Bread.vue'
     export default {
         data() {
           return {
@@ -27,26 +26,23 @@
               {title: '美容中医科', imgUrl: require('./images/zhongyike.png'), toUrl: '/'},
               {title: '麻醉科', imgUrl: require('./images/mazuike.png'), toUrl: '/'},
               {title: '护理', imgUrl: require('./images/huli.png'), toUrl: '/'}
-            ]
+            ],
+            title: "科室介绍"
+          }
+        },
+        components: {
+          Bread
+        },
+        methods: {
+          goTo(param){
+            // console.log(param)
+            this.$router.push({name: 'keshiList', query: {title: param}})
           }
         },
     }
 </script>
 
 <style lang="less" scoped>
-.bread {
-  width: 100%;
-  height: 1.6rem;
-  font-family: 'alibaba';
-  background: url('../../assets/images/bread.jpg') no-repeat;
-  background-size: 100% 100%;
-  p {
-    font-size: .533333rem;
-    line-height: 1.6rem;
-    color: #FFF;
-    padding-left: .666667rem;
-  }
-}
 .content {     
   font-family: 'alibaba';
   width: 100%;
@@ -66,6 +62,7 @@
         margin: 0 auto;
         border-radius: .666667rem;
         overflow: hidden;
+        background-color: #2b8cff;
         box-shadow: 0 3px 15px #2b8cff;
         img{
           width: 100%;
@@ -78,6 +75,7 @@
       }
       &:nth-child(2n) {
       .img {
+        background-color: #20baee;
         box-shadow: 0 3px 15px #20baee;
       }
     }
