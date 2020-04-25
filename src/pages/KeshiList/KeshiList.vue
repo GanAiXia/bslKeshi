@@ -109,7 +109,8 @@
     }
 }
 .doctor {
-    width: 100%;
+    width: 9.08rem;
+    margin: 0 auto;
     padding-top: 1.36rem;
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +118,7 @@
     .doctorcon{
         width: 3.72rem;
         height: 4.84rem;
-        margin: 0 .52rem .8rem;
+        margin: 0 .34rem .8rem;
         box-shadow: 3px 3px 10px #ccc;
         border-radius: .24rem;
         text-align: center;

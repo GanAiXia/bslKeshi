@@ -10,6 +10,9 @@
                         <h2>沈国雄</h2>
                         <span class="line"></span>
                         <h4>院长</h4>                        
+                        <div class="shanchang">
+                        擅长：隆鼻术、重睑术 
+                        </div>                        
                     </div>
                 </div>
                 <div class="bottom">
@@ -58,7 +61,25 @@
                 }
             }
             .doctortext {
-                padding-left: 0.3rem;
+                padding-left: 0.5rem;
+                padding-top: 0.3rem;
+                display: flex;             
+                flex-wrap: wrap;
+                width: 5rem;
+                h2 {
+                    font-size: 0.5rem;
+                    font-weight: bold;
+                    color: #fff;
+                    padding-right: 0.3rem;
+                }
+                h4 {
+                    font-size: 0.3rem;
+                    color: #fff;
+                    padding-top: 0.17rem;
+                }
+                .shanchang {
+                    color: #fff;
+                }
             }
         }
         .bottom {
