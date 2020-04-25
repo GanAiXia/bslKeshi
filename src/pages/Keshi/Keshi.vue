@@ -19,14 +19,7 @@
     export default {
         data() {
           return {
-            keshiTotal: [
-              {title: '美容外科', imgUrl: require('./images/waike.png')},
-              {title: '美容皮肤科', imgUrl: require('./images/pifuke.png')},
-              {title: '美容牙科', imgUrl: require('./images/yake.png')},
-              {title: '美容中医科', imgUrl: require('./images/zhongyike.png')},
-              {title: '麻醉科', imgUrl: require('./images/mazuike.png')},
-              {title: '护理', imgUrl: require('./images/huli.png')}
-            ],
+            keshiTotal: [],
             title: "科室介绍"
           }
         },
@@ -36,11 +29,10 @@
         mounted(){
           let doctorList = require('../../../data/doctorList.json')
           doctorList = Array.from(doctorList.Data)
-          console.log(doctorList[0].doctors);
+          this.keshiTotal = doctorList 
         },
         methods: {
           goTo(param){
-            // console.log(param)
             this.$router.push({name: 'keshiList', query: {title: param}})
           }
         },

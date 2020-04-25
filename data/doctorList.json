@@ -4,69 +4,27 @@
     "Data": [
         {
             "title": "美容外科",
-            "imgUrl": "require('./images/waike.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "imgUrl": "./images/keshi/waike.png"
         },
         {
             "title": "美容皮肤科",
-            "imgUrl": "require('./images/pifuke.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "imgUrl": "./images/keshi/pifuke.png"
         },
         {
             "title": "美容牙科",
-            "imgUrl": "require('./images/yake.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "imgUrl": "./images/keshi/yake.png"
         },
         {
-            "title": "美容外科",
-            "imgUrl": "require('./images/waike.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "title": "美容中医科",
+            "imgUrl": "./images/keshi/zhongyike.png"
         },
         {
-            "title": "美容皮肤科",
-            "imgUrl": "require('./images/pifuke.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "title": "麻醉科",
+            "imgUrl": "./images/keshi/mazuike.png"
         },
         {
-            "title": "美容牙科",
-            "imgUrl": "require('./images/yake.png')",
-            "doctors": [
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"},
-                {"name": "名字", "职称": "院长"}
-            ]
+            "title": "护理",
+            "imgUrl": "./images/keshi/huli.png"
         }        
     ]
 }
