@@ -23,7 +23,20 @@
                         <span class="line"></span>
                         <h4>院长</h4>
                     </div>
-                    <span class="detail">
+                    <span class="detail" @click="toDoctor(1)">
+                        <a href="javascript:;">查看详情</a>
+                    </span>
+                </div>
+                <div class="doctorcon">
+                    <div class="topimg">
+                        <img src="../../../public/images/doctors/sgx_03.png">
+                    </div>
+                    <div class="centertext">
+                        <h2>沈国雄</h2>
+                        <span class="line"></span>
+                        <h4>院长</h4>
+                    </div>
+                    <span class="detail" @click="toDoctor(2)">
                         <a href="">查看详情</a>
                     </span>
                 </div>
@@ -36,7 +49,7 @@
                         <span class="line"></span>
                         <h4>院长</h4>
                     </div>
-                    <span class="detail">
+                    <span class="detail" @click="toDoctor(3)">
                         <a href="">查看详情</a>
                     </span>
                 </div>
@@ -49,20 +62,7 @@
                         <span class="line"></span>
                         <h4>院长</h4>
                     </div>
-                    <span class="detail">
-                        <a href="">查看详情</a>
-                    </span>
-                </div>
-                <div class="doctorcon">
-                    <div class="topimg">
-                        <img src="../../../public/images/doctors/sgx_03.png">
-                    </div>
-                    <div class="centertext">
-                        <h2>沈国雄</h2>
-                        <span class="line"></span>
-                        <h4>院长</h4>
-                    </div>
-                    <span class="detail">
+                    <span class="detail" @click="toDoctor(4)">
                         <a href="">查看详情</a>
                     </span>
                 </div>                                                
@@ -85,6 +85,11 @@
         mounted() {
             this.title = this.$route.query.title            
         },
+        methods: {
+            toDoctor(param){
+                this.$router.push({name: 'doctor', query: param})
+            }
+        }
     }
 </script>
 
@@ -130,7 +135,7 @@
             color: #333;
             font-size: .48rem;
             font-weight: bold;
-            margin: .32rem 0 .186667rem;
+            margin: .32rem 0 .17rem;
         }
         .line {
             display: block;
@@ -141,19 +146,19 @@
         h4 {
             color: #9a9a9a;
             font-size: .32rem;
-            margin: .186667rem 0 .32rem;
+            margin: .17rem 0 .23rem;
         }
         .detail {
             display: block;
             margin: 0 auto;
             background-color: #2b8cff;
-            width: 1.533333rem;
-            height: .426667rem;
-            border-radius: .213333rem;
+            width: 1.8rem;
+            height: .53rem;
+            border-radius: .26rem;
             a {
                 color: #ffffff;
                 font-size: .266667rem;
-                line-height: .426667rem;
+                line-height: .55rem;
             }
         }
     }

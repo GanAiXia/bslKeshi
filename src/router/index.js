@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 import Keshi from '../pages/Keshi/Keshi.vue'
 import KeshiList from '../pages/KeshiList/KeshiList.vue'
+import Doctor from '../pages/Doctor/Doctor.vue'
 
 Vue.use(VueRouter)
 
@@ -32,6 +33,14 @@ export default new VueRouter({
             meta: {
                 title:'上海伯思立-科室介绍'
             }            
-        }        
+        },
+        {
+            path: '/doctor',
+            component: Doctor,
+            name: 'doctor',
+            meta: {
+                title:'上海伯思立-医生介绍'
+            }            
+        }                
     ]
 })
