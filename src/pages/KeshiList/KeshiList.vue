@@ -13,6 +13,60 @@
                     目前，科室开展了眼部整形、鼻部整形、胸部整形、自体脂肪移植、抽脂、植发、疤痕综合治疗等多种项目，致力为求美者提供全方位的医疗服务。     
                 </div>
             </div>
+            <div class="doctor">
+                <div class="doctorcon">
+                    <div class="topimg">
+                        <img src="../../../public/images/doctors/sgx_03.png">
+                    </div>
+                    <div class="centertext">
+                        <h2>沈国雄</h2>
+                        <span class="line"></span>
+                        <h4>院长</h4>
+                    </div>
+                    <span class="detail">
+                        <a href="">查看详情</a>
+                    </span>
+                </div>
+                <div class="doctorcon">
+                    <div class="topimg">
+                        <img src="../../../public/images/doctors/sgx_03.png">
+                    </div>
+                    <div class="centertext">
+                        <h2>沈国雄</h2>
+                        <span class="line"></span>
+                        <h4>院长</h4>
+                    </div>
+                    <span class="detail">
+                        <a href="">查看详情</a>
+                    </span>
+                </div>
+                <div class="doctorcon">
+                    <div class="topimg">
+                        <img src="../../../public/images/doctors/sgx_03.png">
+                    </div>
+                    <div class="centertext">
+                        <h2>沈国雄</h2>
+                        <span class="line"></span>
+                        <h4>院长</h4>
+                    </div>
+                    <span class="detail">
+                        <a href="">查看详情</a>
+                    </span>
+                </div>
+                <div class="doctorcon">
+                    <div class="topimg">
+                        <img src="../../../public/images/doctors/sgx_03.png">
+                    </div>
+                    <div class="centertext">
+                        <h2>沈国雄</h2>
+                        <span class="line"></span>
+                        <h4>院长</h4>
+                    </div>
+                    <span class="detail">
+                        <a href="">查看详情</a>
+                    </span>
+                </div>                                                
+            </div>
         </div>
     </div>
 </template>
@@ -47,6 +101,61 @@
         line-height: .586667rem;
         font-family: "alibaba";
         text-align: justify;
+    }
+}
+.doctor {
+    width: 100%;
+    padding-top: 1.36rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .doctorcon{
+        width: 3.72rem;
+        height: 4.84rem;
+        margin: 0 .52rem .8rem;
+        box-shadow: 3px 3px 10px #ccc;
+        border-radius: .24rem;
+        text-align: center;
+        .topimg{
+            width: 1.906667rem;
+            height: 1.906667rem;
+            margin: 0 auto;
+            margin-top: .3rem;
+            border-radius: .946667rem;
+            img{
+                width: 100%;
+            }
+        }
+        h2 {
+            color: #333;
+            font-size: .48rem;
+            font-weight: bold;
+            margin: .32rem 0 .186667rem;
+        }
+        .line {
+            display: block;
+            margin: 0 auto;
+            border-bottom: 2px solid #999999;
+            width: .36rem;
+        }
+        h4 {
+            color: #9a9a9a;
+            font-size: .32rem;
+            margin: .186667rem 0 .32rem;
+        }
+        .detail {
+            display: block;
+            margin: 0 auto;
+            background-color: #2b8cff;
+            width: 1.533333rem;
+            height: .426667rem;
+            border-radius: .213333rem;
+            a {
+                color: #ffffff;
+                font-size: .266667rem;
+                line-height: .426667rem;
+            }
+        }
     }
 }
 </style>
