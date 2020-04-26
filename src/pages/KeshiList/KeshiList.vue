@@ -3,69 +3,24 @@
         <Bread :title="title"/>
         <div class="container">
             <div class="toptext">
-                <div class="p1">
-                    上海伯思立医疗美容门诊部美容外科成立于2015年。
-                </div>
-                <div class="p2">
-                    现有主任医师1名、副主任医师2名，主治医师16名、执业医师4名等。多名医师曾在上海第九人民医院，第一人民医院，长海医院等公立医院从事临床工作，美容外科医师曾荣获（专利，奖状，社会任职）。
-                </div>
-                <div class="p3">
-                    目前，科室开展了眼部整形、鼻部整形、胸部整形、自体脂肪移植、抽脂、植发、疤痕综合治疗等多种项目，致力为求美者提供全方位的医疗服务。     
+                <div class="p1" v-for="(item, index) in listreduce" :key="index">
+                    {{item.p1}}
                 </div>
             </div>
             <div class="doctor">
-                <div class="doctorcon">
+                <div class="doctorcon" v-for="(doctor, index) in listCont" :key="index">
                     <div class="topimg">
-                        <img src="../../../public/images/doctors/sgx_03.png">
+                        <img :src="doctor.docImg">
                     </div>
                     <div class="centertext">
-                        <h2>沈国雄</h2>
+                        <h2>{{doctor.name}}</h2>
                         <span class="line"></span>
-                        <h4>院长</h4>
+                        <h4>{{doctor.touxian}}</h4>
                     </div>
-                    <span class="detail" @click="toDoctor(1)">
+                    <span class="detail" @click="toDoctor(doctor)">
                         <a href="javascript:;">查看详情</a>
                     </span>
-                </div>
-                <div class="doctorcon">
-                    <div class="topimg">
-                        <img src="../../../public/images/doctors/sgx_03.png">
-                    </div>
-                    <div class="centertext">
-                        <h2>沈国雄</h2>
-                        <span class="line"></span>
-                        <h4>院长</h4>
-                    </div>
-                    <span class="detail" @click="toDoctor(2)">
-                        <a href="">查看详情</a>
-                    </span>
-                </div>
-                <div class="doctorcon">
-                    <div class="topimg">
-                        <img src="../../../public/images/doctors/sgx_03.png">
-                    </div>
-                    <div class="centertext">
-                        <h2>沈国雄</h2>
-                        <span class="line"></span>
-                        <h4>院长</h4>
-                    </div>
-                    <span class="detail" @click="toDoctor(3)">
-                        <a href="">查看详情</a>
-                    </span>
-                </div>
-                <div class="doctorcon">
-                    <div class="topimg">
-                        <img src="../../../public/images/doctors/sgx_03.png">
-                    </div>
-                    <div class="centertext">
-                        <h2>沈国雄</h2>
-                        <span class="line"></span>
-                        <h4>院长</h4>
-                    </div>
-                    <span class="detail" @click="toDoctor(4)">
-                        <a href="">查看详情</a>
-                    </span>
-                </div>                                                
+                </div>                                               
             </div>
         </div>
     </div>
@@ -76,18 +31,31 @@
     export default {
         data() {
             return {
-                title: '科室介绍'
+                title: '科室介绍',
+                listreduce: [],
+                listCont: []
             }
         },
         components: {
             Bread
         },
         mounted() {
-            this.title = this.$route.query.title            
+            const title = JSON.parse(localStorage.getItem("title"))
+            this.title = title
+            const listreduce = JSON.parse(localStorage.getItem("listreduce"))
+            this.listreduce = listreduce
+            const listCont = JSON.parse(localStorage.getItem("listCont"))
+            this.listCont = listCont
+            console.log(this.listreduce)
+            console.log(this.listCont)
+    
         },
         methods: {
-            toDoctor(param){
-                this.$router.push({name: 'doctor', query: param})
+            toDoctor(doctor){
+                // console.log(doctor);
+                doctor = JSON.stringify(doctor)
+                localStorage.setItem("doctor", doctor)
+                this.$router.push({name: 'doctor'})
             }
         }
     }
@@ -163,5 +131,10 @@
             }
         }
     }
+    &::after{
+        content: '';
+        width: 3.72rem;
+        margin: 0 .34rem .8rem;
+    }    
 }
 </style>

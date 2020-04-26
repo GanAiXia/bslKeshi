@@ -2,7 +2,7 @@
     <div>
         <!-- 头部、logo -->
         <div class="head">
-            <div class="head-img">
+            <div class="head-img" @click="gotoHome()">
                 <img src="../../assets/images/logo.jpg" alt="上海伯思立">
             </div>
         </div>               
@@ -11,7 +11,11 @@
 
 <script>
     export default {
-        
+        methods: {
+          gotoHome(){
+            this.$router.push('/')
+          }
+        },
     }
 </script>
 

@@ -3,7 +3,7 @@
         <Bread :title = "title" />
         <div class="content">
           <ul>
-            <li class="item" v-for="(item, index) in keshiTotal" :key="index" @click="goTo(item.title)">
+            <li class="item" v-for="(item, index) in keshiTotal" :key="index" @click="goTo(item.title, item.listCont, item.listreduce)">
               <div class="img">
                 <img :src="item.imgUrl" :alt="item.title">
               </div>
@@ -29,11 +29,17 @@
         mounted(){
           let doctorList = require('../../../data/doctorList.json')
           doctorList = Array.from(doctorList.Data)
-          this.keshiTotal = doctorList 
+          this.keshiTotal = doctorList           
         },
         methods: {
-          goTo(param){
-            this.$router.push({name: 'keshiList', query: {title: param}})
+          goTo(title, listCont, listreduce){
+            title = JSON.stringify(title)
+            listCont = JSON.stringify(listCont)
+            listreduce = JSON.stringify(listreduce)
+            localStorage.setItem("title", title)
+            localStorage.setItem("listCont", listCont)
+            localStorage.setItem("listreduce", listreduce)
+            this.$router.push({name: 'keshiList'})
           }
         },
     }

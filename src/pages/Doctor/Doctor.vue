@@ -4,14 +4,14 @@
             <div class="contson">
                 <div class="top">
                     <div class="doctorimg">
-                        <img src="../../../public/images/doctors/sgx_03.png" alt="" srcset="">
+                        <img :src="doctor.docImg" alt="" srcset="">
                     </div>
                     <div class="doctortext">
-                        <h2>沈国雄</h2>
+                        <h2>{{doctor.name}}</h2>
                         <span class="line"></span>
-                        <h4>院长</h4>                        
-                        <div class="shanchang">
-                        擅长：隆鼻术、重睑术 
+                        <h4>{{doctor.touxian}}</h4>                        
+                        <div class="shanchang" v-if="doctor.goodat">
+                        擅长：{{doctor.goodat}} 
                         </div>                        
                     </div>
                 </div>
@@ -27,10 +27,13 @@
     export default {
         data() {
             return {
-
+                doctor: {}
             }
         },
         mounted() {
+           const doctor = localStorage.getItem("doctor")
+           console.log(doctor);
+           this.doctor = JSON.parse(doctor)
         }
     }
 </script>
@@ -41,7 +44,6 @@
     height: calc(~"100vh - 1.44rem");
     background: url(./images/bg.jpg) no-repeat;
     background-size: 100% 100%;
-    background-attachment: fixed;
     overflow: hidden;
     .contson{
         width: 8rem;
@@ -62,7 +64,7 @@
             }
             .doctortext {
                 padding-left: 0.5rem;
-                padding-top: 0.3rem;
+                padding-top: 0.2rem;
                 display: flex;             
                 flex-wrap: wrap;
                 width: 5rem;
@@ -79,6 +81,8 @@
                 }
                 .shanchang {
                     color: #fff;
+                    width: 5rem;
+                    line-height: 0.38rem;
                 }
             }
         }
