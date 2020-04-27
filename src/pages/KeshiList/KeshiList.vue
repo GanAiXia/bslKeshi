@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="doctor">
-                <div class="doctorcon" v-for="(doctor, index) in listCont" :key="index">
+                <div class="doctorcon" v-for="(doctor, index) in listCont2" :key="index">
                     <div class="topimg">
                         <img :src="doctor.docImg">
                     </div>
@@ -20,8 +20,18 @@
                     <span class="detail" @click="toDoctor(doctor)">
                         <a href="javascript:;">查看详情</a>
                     </span>
-                </div>                                               
+                </div>
             </div>
+            <div class="next" v-if="showNext">
+                <div class="nextCont" @click="nextPage()">
+                    下一页
+                </div>
+            </div> 
+            <div class="next" v-if="showPre" @click="prePage">
+                <div class="nextCont">
+                    上一页
+                </div>
+            </div>                        
         </div>
     </div>
 </template>
@@ -33,7 +43,10 @@
             return {
                 title: '科室介绍',
                 listreduce: [],
-                listCont: []
+                listCont: [],
+                listCont2: [],
+                showNext: false,
+                showPre: false
             }
         },
         components: {
@@ -45,17 +58,29 @@
             const listreduce = JSON.parse(localStorage.getItem("listreduce"))
             this.listreduce = listreduce
             const listCont = JSON.parse(localStorage.getItem("listCont"))
-            this.listCont = listCont
-            console.log(this.listreduce)
-            console.log(this.listCont)
-    
+            if (listCont.length > 12) {
+                this.listCont2 = listCont.slice(0, 12)  
+                this.listCont = listCont
+                this.showNext = true           
+            }else{
+                this.listCont2 = listCont
+            }            
         },
         methods: {
             toDoctor(doctor){
-                // console.log(doctor);
                 doctor = JSON.stringify(doctor)
                 localStorage.setItem("doctor", doctor)
                 this.$router.push({name: 'doctor'})
+            },
+            nextPage(){
+                this.listCont2 = this.listCont.slice(12, this.listCont.length)
+                this.showNext = false
+                this.showPre = true
+            },
+            prePage(){
+                this.listCont2 = this.listCont.slice(0, 12)
+                this.showNext = true
+                this.showPre = false
             }
         }
     }
@@ -87,7 +112,7 @@
         width: 3.72rem;
         height: 4.84rem;
         margin: 0 .34rem .8rem;
-        box-shadow: 3px 3px 10px #ccc;
+        box-shadow: 3px 3px 10px rgba(204, 204, 204, 0.5);
         border-radius: .24rem;
         text-align: center;
         .topimg{
@@ -135,6 +160,20 @@
         content: '';
         width: 3.72rem;
         margin: 0 .34rem .8rem;
-    }    
+    }   
+}
+.next {
+    width: 100%;
+    margin-bottom: 1rem;
+    .nextCont {
+        width: 2.226667rem;
+        height: .613333rem;
+        margin: 0 auto;
+        text-align: center;
+        line-height: .613333rem;
+        color: #9a9a9a;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+    }
 }
 </style>
