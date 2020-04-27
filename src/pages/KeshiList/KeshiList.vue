@@ -125,10 +125,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .doctorcon{
-        width: 4rem;
-        height: 4.84rem;
+        width: 45%;
         margin: 0 .4rem .8rem;
-        box-shadow: -2px 2px 10px rgba(204, 204, 204, 0.5);
+        padding-bottom: 0.6rem;
+        box-shadow: 0 0 10px rgba(204, 204, 204, 0.5);
         border-radius: .24rem;
         text-align: center;
         .topimg{
