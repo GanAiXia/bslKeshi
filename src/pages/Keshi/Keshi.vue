@@ -36,6 +36,7 @@
             title = JSON.stringify(title)
             listCont = JSON.stringify(listCont)
             listreduce = JSON.stringify(listreduce)
+            localStorage.setItem("pageNow", 1)
             localStorage.setItem("title", title)
             localStorage.setItem("listCont", listCont)
             localStorage.setItem("listreduce", listreduce)

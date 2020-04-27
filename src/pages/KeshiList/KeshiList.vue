@@ -46,7 +46,8 @@
                 listCont: [],
                 listCont2: [],
                 showNext: false,
-                showPre: false
+                showPre: false,
+                pageNow: 1
             }
         },
         components: {
@@ -58,10 +59,21 @@
             const listreduce = JSON.parse(localStorage.getItem("listreduce"))
             this.listreduce = listreduce
             const listCont = JSON.parse(localStorage.getItem("listCont"))
+            const pageNow = JSON.parse(localStorage.getItem("pageNow"))
+            this.pageNow = pageNow
             if (listCont.length > 12) {
-                this.listCont2 = listCont.slice(0, 12)  
-                this.listCont = listCont
-                this.showNext = true           
+                this.listCont = listCont                
+                if (this.pageNow === 1) {
+                    this.listCont2 = listCont.slice(0, 12)  
+                    this.listCont = listCont
+                    this.showNext = true
+                    this.showPre = false                
+                }else{
+                    this.listCont2 = listCont.slice(12, listCont.length)  
+                    this.showNext = false
+                    this.showPre = true                  
+                }
+    
             }else{
                 this.listCont2 = listCont
             }            
@@ -76,11 +88,15 @@
                 this.listCont2 = this.listCont.slice(12, this.listCont.length)
                 this.showNext = false
                 this.showPre = true
+                this.pageNow = 2
+                localStorage.setItem("pageNow", 2)                
             },
             prePage(){
                 this.listCont2 = this.listCont.slice(0, 12)
                 this.showNext = true
                 this.showPre = false
+                this.pageNow = 1
+                localStorage.setItem("pageNow", 1)                
             }
         }
     }
@@ -92,7 +108,7 @@
     overflow: hidden;
     padding-top: .56rem;
     .toptext {
-        width: 9.08rem;
+        width: 89%;
         margin: 0 auto;
         font-size: .293333rem;
         color: #333333;
@@ -102,17 +118,17 @@
     }
 }
 .doctor {
-    width: 9.08rem;
+    width:89%;
     margin: 0 auto;
     padding-top: 1.36rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     .doctorcon{
-        width: 3.72rem;
+        width: 4rem;
         height: 4.84rem;
-        margin: 0 .34rem .8rem;
-        box-shadow: 3px 3px 10px rgba(204, 204, 204, 0.5);
+        margin: 0 .4rem .8rem;
+        box-shadow: -2px 2px 10px rgba(204, 204, 204, 0.5);
         border-radius: .24rem;
         text-align: center;
         .topimg{
@@ -154,6 +170,12 @@
                 font-size: .266667rem;
                 line-height: .55rem;
             }
+        }
+        &:nth-child(2n+1) {
+            margin-left: 0;
+        }
+        &:nth-child(2n) {
+            margin-right: 0;
         }
     }
     &::after{

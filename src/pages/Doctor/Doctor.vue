@@ -16,7 +16,7 @@
                     </div>
                 </div>
                 <div class="bottom">
-                    毕业于上海第二医科大学，1999年-2009年，在上海交通大学医学院附属上海第九人民医院任职，临床工作近20年；现任上海伯思立医疗美容门诊部美容外科医师。
+                    {{doctor.detail}}
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
     background-size: 100% 100%;
     overflow: hidden;
     .contson{
-        width: 8rem;
+        width: 80%;
         height: 100%;
         margin: 0 auto;
         padding-top: 1rem;

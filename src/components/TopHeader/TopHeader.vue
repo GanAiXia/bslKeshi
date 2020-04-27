@@ -3,7 +3,7 @@
         <!-- 头部、logo -->
         <div class="head">
             <div class="head-img" @click="gotoHome()">
-                <img src="../../assets/images/logo.jpg" alt="上海伯思立">
+                <img src="../../assets/images/logo.png" alt="上海伯思立">
             </div>
         </div>               
     </div>
@@ -25,9 +25,8 @@
   height: 1.44rem;
   background-color: #FFF;
   .head-img {
-    width: 5.746667rem;
+    width: 6rem;
     margin: 0 auto;
-    padding-top: .2rem;
     img {
       width: 100%;
     }
